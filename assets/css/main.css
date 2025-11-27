@@ -897,6 +897,12 @@ section,
   position: relative;
 }
 
+.services .service-item iframe {
+  width: 640px;
+  height: 360px;
+  border: 0px;
+}
+
 .services .service-item .icon {
   background: var(--accent-color);
   display: flex;
