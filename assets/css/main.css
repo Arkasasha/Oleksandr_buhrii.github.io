@@ -1279,3 +1279,302 @@ section,
 .starter-section {
   /* Add your styles here */
 }
+
+
+
+
+
+
+
+
+
+/*
+  Task 1
+*/
+
+:root {
+  --font-sans: "Bungee Shade", "Fredericka the Great",
+                 "UnifrakturCook", "Alfa Slab One", cursive;
+}
+
+h1 {
+  font-family: var(--font-sans);
+  font-size: 2.625rem;
+  font-weight: 700;
+  line-height: 1.15;
+  letter-spacing: -0.03em;
+}
+
+h2 {
+  font-family: var(--font-sans);
+  font-size: 1.875rem;
+  font-weight: 600;
+  line-height: 1.25;
+  letter-spacing: -0.02em;
+}
+
+h3 {
+  font-family: var(--font-sans);
+  font-size: 1.25rem;
+  font-weight: 600;
+  line-height: 1.35;
+  letter-spacing: 0.01em;
+}
+
+
+
+/*
+  Task 2
+*/
+
+a {
+  font-family: var(--font-sans);
+  color: #6b00ff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+button,
+.btn {
+  font-family: var(--font-strange);
+  font-size: 1rem;
+  font-weight: 600;
+  
+  color: white;
+  background: #6b00ff;              /* same base purple as links */
+  
+  padding: 0.65rem 1.3rem;
+  border: none;
+  border-radius: 14px;              /* slightly odd shape */
+  
+  letter-spacing: 0.03em;
+  cursor: pointer;
+  
+  transition:
+    background 0.25s ease,
+    transform 0.15s ease,
+    box-shadow 0.25s ease;
+}
+
+/* Hover */
+button:hover,
+.btn:hover {
+  background: #ff2fd2;              /* neon magenta */
+  box-shadow: 0 0 14px #ff2fd2;     /* glowing effect */
+  transform: translateY(-2px);
+}
+
+/* Active (pressed) */
+button:active,
+.btn:active {
+  background: #00d4ff;              /* cyan */
+  transform: translateY(1px);
+  box-shadow: 0 0 0 transparent;
+}
+
+/* Focus (keyboard) */
+button:focus,
+.btn:focus {
+  outline: 2px dashed #ff2fd2;
+  outline-offset: 4px;
+}
+
+
+/*
+  Task 3
+*/
+
+.section {
+  margin: 16px 0;
+}
+
+
+.section,
+.resume-item {
+  background: #ffffff;
+  border: 1px solid rgba(0,0,0,0.08);
+  border-radius: 14px;
+
+  padding: 2rem;
+  margin-bottom:2rem;
+
+  box-shadow:
+    0 4px 10px rgba(0, 0, 0, 0.04),
+    0 1px 3px rgba(0, 0, 0, 0.08);
+
+  transition:
+    box-shadow 0.25s ease,
+    transform 0.25s ease;
+}
+
+.section:hover,
+.resume-item:hover {
+  transform: translateY(-4px);
+  box-shadow:
+    0 10px 20px rgba(0,0,0,0.08),
+    0 3px 8px rgba(0,0,0,0.10);
+}
+
+/*
+  Task 4
+*/
+
+.navmenu a {
+  font-family: var(--font-sans);
+  color: #6b00ff;
+  text-decoration: none;
+  position: relative;
+  transition: color 0.25s ease;
+}
+
+/* Underline animation */
+.navmenu a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -2px;
+  width: 0%;
+  height: 2px;
+  background: currentColor;
+  transition: width 0.3s ease;
+}
+
+/* Hover */
+.navmenu a:hover {
+  color: #ff2fd2;
+}
+
+.navmenu a:hover::after {
+  width: 100%;
+}
+
+/* Active (pressed) */
+.navmenu a:active {
+  color: #00d4ff;
+}
+
+
+
+/*
+  Complementary task 1 lab 9
+*/
+
+ul.custom {
+  list-style: none;
+  padding-left: 1.5rem;
+  margin: 1rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Bullet using ::before */
+ul.custom li {
+  position: relative;
+  padding-left: 1.2rem;
+  font-weight: 500;
+}
+
+ul.custom li::before {
+  content: "";
+  position: absolute;
+  left: 10px;
+  top: 0.55rem;
+
+  width: 8px;
+  height: 8px;
+  background: #6b00ff;
+  transform: rotate(45deg);
+  border-radius: 2px;
+
+  box-shadow: 0 0 8px #b37aff;
+}
+
+
+/* Reset counter */
+ol.custom {
+  counter-reset: my-counter;
+  list-style: none;
+  padding-left: 1.8rem;
+  margin: 1.2rem 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+/* Numbered items */
+ol.custom li {
+  counter-increment: my-counter;
+  position: relative;
+  padding-left: 2.2rem;
+  font-weight: 600;
+}
+
+ol.custom li::before {
+  content: counter(my-counter);
+  position: absolute;
+  left: 0;
+  top: 0.1rem;
+
+  width: 1.8rem;
+  height: 1.8rem;
+  border-radius: 50%;
+  border: 2px solid #ff2fd2;
+  color: #ff2fd2;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.9rem;
+
+  box-shadow: 0 0 8px rgba(255, 47, 210, 0.3);
+}
+
+
+/*
+  Complementary task 2 lab 9
+*/
+
+/* Wrapper for card-like appearance */
+
+/* Base table */
+.table-custom {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.95rem;
+}
+
+/* Header row */
+.table-custom thead th {
+  background: #6b00ff;
+  color: #fff;
+  font-weight: 600;
+  text-align: left;
+
+  padding: 0.75rem 1rem;
+  letter-spacing: 0.03em;
+}
+
+/* Body cells */
+.table-custom td {
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid rgba(0,0,0,0.08);
+  text-align: left;
+}
+
+/* Right align only numbers */
+.table-custom td[data-type="num"],
+.table-custom th[data-type="num"] {
+  text-align: right;
+}
+
+/* Row hover */
+.table-custom tbody tr:hover {
+  background: rgba(107, 0, 255, 0.06); /* light purple tint */
+}
+
+/* Last row without border */
+.table-custom tbody tr:last-child td {
+  border-bottom: none;
+}
