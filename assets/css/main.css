@@ -1460,7 +1460,7 @@ button:focus,
   Complementary task 1 lab 9
 */
 
-ul.custom {
+ol.custom ul.custom {
   list-style: none;
   padding-left: 1.5rem;
   margin: 1rem 0;
@@ -1470,13 +1470,13 @@ ul.custom {
 }
 
 /* Bullet using ::before */
-ul.custom li {
+ol.custom ul.custom li {
   position: relative;
   padding-left: 1.2rem;
   font-weight: 500;
 }
 
-ul.custom li::before {
+ol.custom ul.custom li::before {
   content: "";
   position: absolute;
   left: 10px;
