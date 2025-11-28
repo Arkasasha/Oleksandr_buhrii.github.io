@@ -1,0 +1,181 @@
+/*
+  Task 3 tab 10
+*/
+
+/* Hover triggers animation */
+.scroll-top:hover {
+  animation: bounceGlow 0.8s ease-in-out forwards;
+}
+
+/* Keyframes for the hover effect */
+@keyframes bounceGlow {
+  0% {
+    transform: scale(1);
+    box-shadow: 0 0 0px rgba(0, 123, 255, 0);
+  }
+  40% {
+    transform: scale(1.15);
+    box-shadow: 0 0 10px rgba(0, 123, 255, 0.6);
+  }
+  70% {
+    transform: scale(0.95);
+    box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+  }
+  100% {
+    transform: scale(1);
+    box-shadow: 0 0 0 rgba(0, 123, 255, 0);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .scroll-top:hover {
+    animation: none;
+  }
+}
+
+/*
+  Task 4 tab 10
+*/
+
+
+.dot-loader {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 6px;              /* Space between dots */
+}
+
+/* Dots */
+.dot-loader span {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #0d6efd;   /* Change to match your theme */
+  opacity: 0.4;
+  animation: pulseDot 0.8s ease-in-out infinite;
+}
+
+/* Staggered animation for each dot */
+.dot-loader span:nth-child(1) {
+  animation-delay: 0s;
+}
+.dot-loader span:nth-child(2) {
+  animation-delay: 0.15s;
+}
+.dot-loader span:nth-child(3) {
+  animation-delay: 0.3s;
+}
+
+/* Keyframes for pulsing effect */
+@keyframes pulseDot {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.4;
+  }
+  50% {
+    transform: scale(1.6);
+    opacity: 1;
+  }
+}
+
+/* Optional: respect reduced motion preferences */
+@media (prefers-reduced-motion: reduce) {
+  .dot-loader span {
+    animation: none;
+  }
+}
+
+/*
+  Complementary 1 tab 10
+*/
+
+.animated-gradient {
+  background: linear-gradient(135deg, #6d5dfc, #2ecfea, #ff9a5a, #ff3cac);
+  background-size: 400% 400%;
+  animation: gradientShift 12s ease infinite;
+}
+
+/* Keyframes animation */
+@keyframes gradientShift {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/*
+  Complementary 2 tab 10
+*/
+
+/* Make the section a positioning context */
+.section {
+  position: relative;
+  overflow: hidden;
+}
+
+/* Shapes container */
+.decorative-shapes {
+  position: absolute;
+  inset: 0;
+  pointer-events: none;
+  z-index: 2; /* overlay above table */
+}
+
+/* Base shape */
+.shape {
+  position: absolute;
+  opacity: 0.7;
+}
+
+/* ------------------------------ */
+/* FLOATING CIRCLE (left to middle) */
+/* ------------------------------ */
+
+.circle {
+  width: 100px;
+  height: 100px;
+  border-radius: 50%;
+  background: rgba(0, 170, 255, 0.6);
+
+  /* Position on the left, floating toward middle */
+  left: 15%;       /* starting left side */
+  top: 20%;
+
+  animation: floatCircle 4s ease-in-out infinite;
+}
+
+@keyframes floatCircle {
+  0%   { transform: translate(0, 0); }
+  50%  { transform: translate(0px, 120px); } /* moves toward middle */
+  100% { transform: translate(0, 0); }
+}
+
+
+/* ------------------------------ */
+/* ROTATING TRIANGLE (right side) */
+/* ------------------------------ */
+
+.triangle {
+  width: 0;
+  height: 0;
+
+  border-left: 100px solid transparent;
+  border-right: 100px solid transparent;
+  border-bottom: 150px solid rgba(255, 80, 140, 0.75);
+
+  /* Position on right side of table */
+  right: 10%;
+  top: 35%;
+
+  animation: rotateTri 6s linear infinite;
+}
+
+@keyframes rotateTri {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
