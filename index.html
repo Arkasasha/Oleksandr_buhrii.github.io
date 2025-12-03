@@ -552,7 +552,6 @@
       <!-- Section Title -->
       <div class="container section-title" data-aos="fade-up">
         <h2>Contact</h2>
-        <p>Necessitatibus eius consequatur ex aliquid fuga eum quidem sint consectetur velit</p>
       </div><!-- End Section Title -->
 
       <div class="container" data-aos="fade-up" data-aos-delay="100">
@@ -595,23 +594,51 @@
               <div class="row gy-4">
 
                 <div class="col-md-6">
-                  <label for="name-field" class="pb-2">Your Name</label>
-                  <input type="text" name="name" id="name-field" class="form-control" required="">
+                  <label for="name-field" class="pb-2">Name</label>
+                  <input type="text" class="form-control" name="name" id="name-field" required="">
+                  <span class="error-text" id="name-error"></span>
                 </div>
 
                 <div class="col-md-6">
-                  <label for="email-field" class="pb-2">Your Email</label>
+                  <label for="surname-field" class="pb-2">Surname</label>
+                  <input type="text" class="form-control" name="surname" id="surname-field" required="">
+                  <span class="error-text" id="surname-error"></span>
+                </div>
+
+                <div class="col-md-12">
+                  <label for="email-field" class="pb-2">Email</label>
                   <input type="email" class="form-control" name="email" id="email-field" required="">
+                  <span class="error-text" id="email-error"></span>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="subject-field" class="pb-2">Subject</label>
-                  <input type="text" class="form-control" name="subject" id="subject-field" required="">
+                  <label for="phonenumber-field" class="pb-2">Phone number</label>
+                  <input type="text" class="form-control" name="phonenumber" id="phonenumber-field" required="">
+                  <span class="error-text" id="phone-error"></span>
                 </div>
 
                 <div class="col-md-12">
-                  <label for="message-field" class="pb-2">Message</label>
-                  <textarea class="form-control" name="message" rows="10" id="message-field" required=""></textarea>
+                  <label for="address-field" class="pb-2">Address</label>
+                  <input type="text" class="form-control" name="address" id="address-field" required="">
+                  <span class="error-text" id="address-error"></span>
+                </div>
+
+                <div class="question">
+                    <label>How clearly does the resume present the candidate’s skills and experience?</label>
+                    <input type="range" min="1" max="10" value="5" class="slider" id="q1">
+                    <span id="q1Value">5</span>
+                </div>
+
+                <div class="question">
+                    <label>How relevant is the resume to the position or field it targets?</label>
+                    <input type="range" min="1" max="10" value="5" class="slider" id="q2">
+                    <span id="q2Value">5</span>
+                </div>
+
+                <div class="question">
+                    <label>How strong is the overall quality and professionalism of the resume?</label>
+                    <input type="range" min="1" max="10" value="5" class="slider" id="q3">
+                    <span id="q3Value">5</span>
                 </div>
 
                 <div class="col-md-12 text-center">
@@ -619,10 +646,14 @@
                   <div class="error-message"></div>
                   <div class="sent-message">Your message has been sent. Thank you!</div>
 
-                  <button type="submit">Send Message</button>
+                  <button type="button" >Send Message</button>
                 </div>
 
               </div>
+
+              <div id="output1" class="output"></div>
+              <div id="output2" class="output"></div>
+              
             </form>
           </div><!-- End Contact Form -->
 
@@ -631,6 +662,8 @@
       </div>
 
     </section><!-- /Contact Section -->
+
+    <div id="popup" class="popup">Form submitted successfully!</div>
 
     <section class="section">
 
@@ -728,6 +761,7 @@
 
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
+  <script src="assets/js/custom.js"></script>
 
 </body>
 
