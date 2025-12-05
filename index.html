@@ -27,6 +27,7 @@
   <!-- Main CSS File -->
   <link href="assets/css/main.css" rel="stylesheet">
   <link href="assets/css/custom.css" rel="stylesheet">
+  <link href="assets/css/game.css" rel="stylesheet">
 
   <!-- =======================================================
   * Template Name: iPortfolio
@@ -722,6 +723,42 @@
 
     </section>
 
+    <section class="section">
+      <div class="memory-game">
+        <h2>Memory Game</h2>
+
+        <!-- Controls -->
+        <div class="memory-controls">
+          <div class="difficulty-select">
+            <label for="difficulty">Difficulty:</label>
+            <select id="difficulty">
+              <option value="easy" selected>Easy (4×3)</option>
+              <option value="hard">Hard (6×4)</option>
+            </select>
+          </div>
+
+          <div class="buttons">
+            <button id="startGame">Start</button>
+            <button id="restartGame">Restart</button>
+          </div>
+        </div>
+
+        <!-- Stats Panel -->
+        <div class="memory-stats">
+          <div>Moves: <span id="movesCount">0</span></div>
+          <div>Matches: <span id="matchesCount">0 / 0</span></div>
+          <div>Best: <span id="bestScore">—</span></div>
+          <div>Time: <span id="timer">00:00</span></div>
+        </div>
+
+        <!-- Game Board -->
+        <div id="memoryBoard" class="memory-board"></div>
+
+        <!-- Win Message -->
+        <div id="winMessage" class="win-message"></div>
+      </div>
+    </section>
+
   </main>
 
   <footer id="footer" class="footer position-relative light-background">
@@ -762,6 +799,7 @@
   <!-- Main JS File -->
   <script src="assets/js/main.js"></script>
   <script src="assets/js/custom.js"></script>
+  <script src="assets/js/game.js"></script>
 
 </body>
 

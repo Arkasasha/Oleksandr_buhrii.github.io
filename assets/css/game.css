@@ -1,0 +1,146 @@
+.memory-game {
+      max-width: 800px;
+      margin: 0 auto;
+      padding: 1.5rem;
+      border-radius: 1rem;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+      background: #ffffff;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    .memory-game h2 {
+      text-align: center;
+      margin-bottom: 1rem;
+    }
+
+    .memory-controls {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 1rem;
+      margin-bottom: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .difficulty-select label {
+      margin-right: 0.25rem;
+      font-weight: 500;
+    }
+
+    .difficulty-select select {
+      padding: 0.25rem 0.5rem;
+      border-radius: 0.5rem;
+      border: 1px solid #ccc;
+    }
+
+    .buttons {
+      display: flex;
+      gap: 0.5rem;
+    }
+
+    .buttons button {
+      padding: 0.4rem 0.9rem;
+      border-radius: 0.5rem;
+      border: none;
+      cursor: pointer;
+      font-weight: 500;
+    }
+
+    #startGame {
+      background: #4caf50;
+      color: #fff;
+    }
+
+    #restartGame {
+      background: #f44336;
+      color: #fff;
+    }
+
+    .memory-stats {
+      display: flex;
+      justify-content: center;
+      gap: 2rem;
+      margin-bottom: 1rem;
+      font-weight: 500;
+    }
+
+    .memory-board {
+      --columns: 4;
+      display: grid;
+      grid-template-columns: repeat(var(--columns), minmax(70px, 1fr));
+      gap: 0.75rem;
+      justify-items: center;
+    }
+
+    .memory-card {
+      width: 100%;
+      max-width: 100px;
+      aspect-ratio: 3 / 4;
+      perspective: 800px;
+      cursor: pointer;
+    }
+
+    .memory-card.matched {
+      cursor: default;
+      opacity: 0.8;
+    }
+
+    .card-inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.4s ease;
+      border-radius: 0.75rem;
+    }
+
+    .memory-card.flipped .card-inner {
+      transform: rotateY(180deg);
+    }
+
+    .card-front,
+    .card-back {
+      position: absolute;
+      inset: 0;
+      backface-visibility: hidden;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 0.75rem;
+      font-size: 2rem;
+      user-select: none;
+    }
+
+    .card-front {
+      background: linear-gradient(135deg, #42a5f5, #1e88e5);
+      color: #fff;
+    }
+
+    .card-back {
+      background: #f5f5f5;
+      border: 1px solid #ddd;
+      transform: rotateY(180deg);
+    }
+
+    .win-message {
+      margin-top: 1rem;
+      text-align: center;
+      font-size: 1.1rem;
+      font-weight: 600;
+      color: #4caf50;
+      min-height: 1.4em;
+    }
+
+    @media (max-width: 600px) {
+      .memory-stats {
+        flex-direction: column;
+        gap: 0.4rem;
+      }
+      .memory-controls {
+        flex-direction: column;
+        align-items: flex-start;
+      }
+      .memory-board {
+        gap: 0.5rem;
+      }
+    }
